@@ -388,12 +388,3 @@ d = parameter * c_n
 d = pd.DataFrame(d)
 sns.heatmap(d,xticklabels=False, yticklabels=False, cmap="YlGnBu", ax=axes[2], square=True)
 plt.savefig('/content/drive/MyDrive/hessian_compare_50_2', dpi=1080)
-
-"""**代码问题：1.求二阶导准确吗，待测试 2.用了磁盘映射，因为矩阵太大了3.为了求二阶导不能拆了自动求导树，不能flatten()之后再求二阶导，遍历的问题，尝试了递归，但是没法写到磁盘对应的行（不知道是哪一行），也没用多层循环，最后选择一层循环，算是虚拟的flatten()????**
-
-**问题：1.二阶偏导的值和权值本身的大小有关系吗。2.权值的可视化，做个对比。3.第一层的权值和最后一层的权值是怎么扯上关系的（为什么不是零）。4.泰勒展开的时候，如果只有一个权值改变了，根本不需要假设偏导是零？？**
-
-**待做问题：1.试试基于权值剪枝(用pytorch带的prune接口实现）的mask作用之后的hesiian矩阵，有意义吗？？？回答：前提是Hessian比幅值要好**
-
-# 还想试试：想可视化这个模型对应的函数（但是自变量维度太高了）
-"""
